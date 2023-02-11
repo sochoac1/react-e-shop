@@ -5,6 +5,10 @@ nav {
 	justify-content: space-between;
 	padding: 0 24px;
 	border-bottom: 1px solid var(--very-light-pink);
+	width: calc(100% - 48px); /*Evita scroll horizontal*/
+	top: 0;
+	position: fixed;
+	background-color: var(--white);
 }
 .menu {
 	display: none;

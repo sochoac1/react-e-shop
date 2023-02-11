@@ -1,33 +1,27 @@
 @import 'vars';
 
 @keyframes swipeLeft {
-	0% {
-	width: 0;
-	}
-	100% {
-	width: 360px;
-	}
+	100% {transform: translateX(-360px);}
 }
 
 
 .MyOrder {
+	top: 60px;
+	right: -360px;
 	width: 360px;
+	bottom: auto;
+	height: 350px;
+	border: 1px solid var(--very-light-pink);
+	position: fixed;
+	animation: swipeLeft 1s ease forwards;
+	border-radius: 6px;
 	padding: 24px;
 	box-sizing: border-box;
-	position: absolute;
-	right: 0;
-	background-color:  white;
-	top: 60px;
-	bottom: auto;
-	border-radius: 6px;
-	border: 1p solid var(--very-light-pink);
-	animation: swipeLeft 0.26s ease;
+	background-color: white;
+	transition: 1s ease;
 	overflow-y: auto;
-	height: 350px;
 }
-// .MyOrder::-webkit-scrollbar{
-// 	display: none;
-// }
+
 .cart-empty {
 	color: var(--hospital-green);
 	text-align: center;
