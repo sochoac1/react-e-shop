@@ -5,12 +5,12 @@ import '@styles/OrderItem.scss';
 import CloseIcon from '@icons/icon_close.png'
 import { index } from 'mathjs';
 
-const OrderItem = ({ product, indexValue }) => {
+const OrderItem = ({ product }) => {
 	// const { indexValue } = product;
 	const { removeFromCart } = useContext(AppContext);
 
-	const handleRemove = index => {
-		removeFromCart(index);
+	const handleRemove = (item) => {
+		removeFromCart(item);
 	}
 
 	return (
@@ -20,7 +20,7 @@ const OrderItem = ({ product, indexValue }) => {
 			</figure>
 			<p>{product.title}</p>
 			<p>{product.price}</p>
-			<img src={CloseIcon} alt="close" onClick={()=>handleRemove(indexValue)}/>
+			<img src={CloseIcon} alt="close" onClick={()=>handleRemove(product)}/>
 		</div>
 	);
 }

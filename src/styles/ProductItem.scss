@@ -22,7 +22,17 @@
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
+	box-shadow: 0 0 3px 0.5px var(--very-light-pink);
 }
+
+.product-info figure:hover img {
+	border-radius: 50%;
+	box-shadow: 0 0 2px 1px var(--hospital-green),
+	0 0 4px 1px var(--hospital-green),
+	0 0 8px 1px var(--hospital-green);
+	cursor: pointer;
+}
+
 .product-info div p:nth-child(1) {
 	font-weight: bold;
 	font-size: var(--md);
