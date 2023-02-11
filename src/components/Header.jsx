@@ -8,8 +8,8 @@ import AppContext from '@context/AppContext.js'
 import Logo from '@logos/logo_yard_sale.svg'
 
 const Header = () => {
-    const [toggle, setToggle] = useState(false);
-    const [toggleOrders,setToggleOrders] = useState(false);
+    const [toggle, setToggle] = useState(false); /* Desplegar el menu*/
+    const [toggleOrders,setToggleOrders] = useState(false); /*Desplegar las ordenes*/
     const { state:{cart}} = useContext(AppContext);
 
     const handleToggle = () => {
@@ -54,7 +54,7 @@ const Header = () => {
             </ul>
         </div>
         {toggle ? <TheMenu /> : null}
-        {toggleOrders && <MyOrder />}
+        {toggleOrders && <MyOrder setToggleOrders={setToggleOrders} />}
     </nav>
     );
 }

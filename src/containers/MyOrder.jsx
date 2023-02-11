@@ -4,7 +4,7 @@ import AppContext from '@context/AppContext.js'
 import '@styles/MyOrder.scss';
 import Flechita from '@icons/flechita.svg';
 
-const MyOrder = () => {
+const MyOrder = ({setToggleOrders}) => {
 	const { state:{cart} } = useContext(AppContext);
 
 	const sumTotal = () => {
@@ -15,12 +15,12 @@ const MyOrder = () => {
 	return (
 		<aside className="MyOrder">
 			<div className="title-container">
-				<img src={Flechita} alt="arrow" />
+				<img src={Flechita} alt="arrow" onClick={()=>setToggleOrders(toggleOrders => !toggleOrders)}/>
 				<p className="title">My order</p>
 			</div>
 			<div className="my-order-content">
 				{cart.length > 0? cart.map((product, index)=>(
-					<OrderItem product={product} key={product.id} indexValue={index} />
+					<OrderItem product={product} key={`${product}-${index}` } indexValue={index} />
 				)): (<div className="cart-empty"> No tienes productos Agregados :( </div>)}
 			</div>
 			<div className="order">
